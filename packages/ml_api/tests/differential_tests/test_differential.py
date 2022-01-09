@@ -50,4 +50,4 @@ def test_model_prediction_differential(
         # rel_tol=0.05.
         assert math.isclose(previous_value,
                             current_value,
-                            rel_tol=model_config.ACCEPTABLE_MODEL_DIFFERENCE)
+                            rel_tol=0.05)

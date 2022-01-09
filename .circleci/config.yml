@@ -218,7 +218,7 @@ jobs:
           command: |
             . venv/bin/activate
             pip install -r packages/ml_api/requirements.txt
-            pytest \ -vv packages/ml_api/tests -m differential
+            pytest -v packages/ml_api/tests -m differential
 
   section_11_build_and_push_to_heroku_docker:
     <<: *defaults

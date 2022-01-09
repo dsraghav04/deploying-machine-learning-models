@@ -1,6 +1,6 @@
 import math
 
-from regression_model.config.core import config as model_config
+from regression_model import config as model_config
 from regression_model.predict import make_prediction
 from regression_model.processing.data_manager import load_dataset
 import pandas as pd
@@ -24,7 +24,7 @@ def test_model_prediction_differential(
     previous_model_df = pd.read_csv(f'{config.PACKAGE_ROOT}/{save_file}')
     previous_model_predictions = previous_model_df.predictions.values
 
-    test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
+    test_data = load_dataset(file_name=model_config.test_data_file)
     multiple_test_input = test_data[99:600]
 
     # When

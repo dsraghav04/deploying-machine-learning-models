@@ -5,7 +5,7 @@ import os
 
 #from neural_network_model.config import config as ccn_config
 from regression_model import __version__ as _version
-from regression_model.config.core import config as model_config
+from regression_model import config as model_config
 from regression_model.processing.data_manager import load_dataset
 
 from api import __version__ as api_version
@@ -36,7 +36,7 @@ def test_prediction_endpoint_returns_prediction(flask_test_client):
     # This is important as it makes it harder for the test
     # data versions to get confused by not spreading it
     # across packages.
-    test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
+    test_data = load_dataset(file_name=model_config.test_data_file)
     post_json = test_data[0:1].to_json(orient='records')
 
     # When

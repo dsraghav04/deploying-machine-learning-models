@@ -10,7 +10,7 @@ def test_prediction_endpoint_validation_200(flask_test_client):
     # This is important as it makes it harder for the test
     # data versions to get confused by not spreading it
     # across packages.
-    test_data = load_dataset(file_name=config.test_data_file)
+    test_data = load_dataset(file_name=config.app_config.test_data_file)
     post_json = test_data.to_json(orient='records')
 
     # When
